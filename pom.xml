@@ -30,6 +30,12 @@
       <artifactId>sql2o</artifactId>
       <version>1.5.4</version>
     </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -71,7 +77,7 @@
         <configuration>
           <jdkVersion>1.8</jdkVersion>
           <!-- Change this to YOUR application name! -->
-          <appName>name-of-app</appName>
+          <appName>my-coolio-blog</appName>
           <processTypes>
             <web>java -jar target/my-app-1.0-jar-with-dependencies.jar</web>
           </processTypes>

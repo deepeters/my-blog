@@ -11,6 +11,9 @@ public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
 
+        port(getHerokuAssignedPort());
+        staticFileLocation("/public");
+
         //get: show new post form
         get("/posts/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
@@ -80,4 +83,12 @@ public class App {
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
     }
+
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+        }
 }
