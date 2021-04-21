@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{#block "title"}}Blog{{/block}}</title>
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+</head>
+<body>
+<ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#">Home</a></li>
+    <li role="presentation"><a href="/posts">See All Posts</a></li>
+    <li role="presentation"><a href="/posts/new">Add a New Post</a></li>
+</ul>
+<div class="container">
+    <!--begin main template-->
+    <div class="page-header">
+        <img src="/public/images/casper-rubin-224229.jpg" width="70%">
+        <h1>Welcome to my Epicodus Blog. <small>A journey into code!</small></h1>
+    </div>
+
+    <div class="col-md-12">
+        {{#block "content"}}
+        {{/block}}
+
+    </div>
+</div>
+<!--end main template-->
+{{#block "footer"}}
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted"><a href="/posts/delete">DELETE ALL POSTS</a></p>
+        </div>
+    </footer>
+    </body>
+    </html>
+{{/block}}
