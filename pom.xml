@@ -36,6 +36,11 @@
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
+      <dependency>
+          <groupId>com.github.jknack</groupId>
+          <artifactId>handlebars-maven-plugin</artifactId>
+          <version>4.2.0</version>
+      </dependency>
   </dependencies>
   <build>
     <plugins>
